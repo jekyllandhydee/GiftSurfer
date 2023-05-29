@@ -11,14 +11,18 @@ public class NextLevel : MonoBehaviour
         if (other.tag == "Player")
         { 
             NextLevelPanel.SetActive(true);
-            await Task.Delay(1000);
             Time.timeScale = 0f;
-            SceneManager.LoadSceneAsync(2).completed += OnLoad;
 
+            AdManager.Instance.ShowInterstitialAd();
         }
     }
     void OnLoad(AsyncOperation op)
     {
         Time.timeScale = 1f;
+    }
+
+    public void LoadNext()
+    {
+        SceneManager.LoadSceneAsync(2).completed += OnLoad;
     }
 }

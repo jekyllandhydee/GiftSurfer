@@ -7,12 +7,12 @@ public class PlayerController : MonoBehaviour
 
     private void OnEnable()
     {
-        GameManager.OnDeath += OnFail;
+        // GameManager.OnDeath += OnFail;
     }
 
     private void OnDisable()
     {
-        GameManager.OnDeath -= OnFail;
+        // GameManager.OnDeath -= OnFail;
     }
 
     private void Start()

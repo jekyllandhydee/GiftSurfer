@@ -7,7 +7,6 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    public GameObject RestartPanel;
     [SerializeField] GameObject gameOverPanel;
 
     Image image;
@@ -28,14 +27,17 @@ public class GameManager : MonoBehaviour
 
     public void InvokeDeath()
     {
+        Time.timeScale = 0f;
         gameOverPanel.SetActive(true);
         OnDeath?.Invoke();
     }
 
     void Start()
     {
-       // image = RestartPanel.GetComponent<Image>();
+        // image = RestartPanel.GetComponent<Image>();
         //len = myColors.Length;
+
+        Time.timeScale = 1f;
     }
 
     public void Restart() => SceneHandler.ReloadScene();

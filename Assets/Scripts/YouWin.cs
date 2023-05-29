@@ -14,6 +14,7 @@ public class YouWin : MonoBehaviour
             YouWinPanel.SetActive(true);
             Time.timeScale = 0f;
 
+            AdManager.Instance.ShowInterstitialAd();
         }
     }
 }
